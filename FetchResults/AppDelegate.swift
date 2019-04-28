@@ -17,6 +17,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    let request: NSFetchRequest<User> = User.fetchRequest()
+    persistentContainer.viewContext.performAndWait {
+      guard let users = try? request.execute() else {return}
+      guard users.isEmpty else {return }
+      let igor = User(context: persistentContainer.viewContext)
+      igor.name = "Igor"
+      igor.lastName = "Maisiuk"
+      igor.id = "1"
+      
+      let iphone = Device(context: persistentContainer.viewContext)
+      iphone.brand = "Apple"
+      iphone.model = "iPhone 7"
+      iphone.owner = igor
+      igor.addToDevices(iphone)
+      
+      let dmitry = User(context: persistentContainer.viewContext)
+      dmitry.name = "Dmitry"
+      dmitry.lastName = "Lipski"
+      dmitry.id = "2"
+      
+      let xiaomi = Device(context: persistentContainer.viewContext)
+      xiaomi.brand = "Xiaomi"
+      xiaomi.model = "Mi 5"
+      xiaomi.owner = dmitry
+      dmitry.addToDevices(xiaomi)
+      
+      saveContext()
+    }
     return true
   }
 

@@ -7,32 +7,52 @@
 //
 
 import Foundation
+import CoreData
+
+protocol FetchResultsDataSourceDelegate: class {
+  func dataSourceWillChangeContent()
+  func dataSourceDidChangeContent()
+  func dataSourceDidChangeObject(at sourceIndexPath: IndexPath?,
+                                 to newIndexPath: IndexPath?,
+                                 with style: NSFetchedResultsChangeType)
+}
+
+protocol FetchResultsDataSource: EntityDisplayableControllerDataSource {
+  var frc: NSFetchedResultsController<Model.Entity> {get}
+  var delegate: FetchResultsDataSourceDelegate? {get set}
+  
+  func cellModel(at indexPath: IndexPath) -> Cell.Model
+  func numberOfSections() -> Int
+  func numberOfRows(in section: Int) -> Int
+  func object(at indexPath: IndexPath) -> Model.Entity
+  func deleteObject(at indexPath: IndexPath)
+}
+
+extension FetchResultsDataSource {
+  
+  func cellModel(at indexPath: IndexPath) -> Model {
+    let entity = object(at: indexPath)
+    return Model.init(with: entity)
+  }
+  
+  func numberOfSections() -> Int {
+    return 1
+  }
+  
+  func numberOfRows(in section: Int) -> Int {
+    return frc.sections?[section].numberOfObjects ?? 0
+  }
+  
+  func object(at indexPath: IndexPath) -> Model.Entity {
+    return frc.object(at: indexPath)
+  }
+  
+  func deleteObject(at indexPath: IndexPath) {
+    
+  }
+}
 
 protocol EntityDisplayableControllerDataSource {
   associatedtype Model: EntityDisplayableCellViewModel
   associatedtype Cell: EntityDisplayableCell
-  func cellModel(at indexPath: IndexPath) -> Cell.Model
-  func numberOfSections() -> Int
-  func numberOfRows(in section: Int) -> Int
-}
-
-extension EntityDisplayableControllerDataSource {
-  func numberOfSections() -> Int {
-    return 1
-  }
-}
-
-final class UserDisplayableControllerViewModel: EntityDisplayableControllerDataSource {
-  typealias Model = UserDisplayableCellViewModel
-  typealias Cell = UserTableViewCell
-  
-  let models: [UserDisplayableCellViewModel] = []
-  
-  func cellModel(at indexPath: IndexPath) -> UserDisplayableCellViewModel {
-    return models[indexPath.row]
-  }
-  
-  func numberOfRows(in section: Int) -> Int {
-    return models.count
-  }
 }

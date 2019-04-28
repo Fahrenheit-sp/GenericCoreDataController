@@ -1,5 +1,5 @@
 //
-//  PersonTableViewCell.swift
+//  EntityDisplayableCellViewModel.swift
 //  FetchResults
 //
 //  Created by Игорь Майсюк on 4/28/19.
@@ -7,16 +7,14 @@
 //
 
 import UIKit
+import CoreData
+
+protocol EntityDisplayableCellViewModel {
+  init(with entity: Entity)
+  associatedtype Entity: NSManagedObject
+}
 
 protocol EntityDisplayableCell: Reusable, UITableViewCell {
   associatedtype Model: EntityDisplayableCellViewModel
   func configure(with model: Model)
-}
-
-class UserTableViewCell: UITableViewCell, EntityDisplayableCell {
-  
-  func configure(with model: UserDisplayableCellViewModel) {
-    textLabel?.text = model.name
-  }
-    
 }
