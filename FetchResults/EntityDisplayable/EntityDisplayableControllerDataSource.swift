@@ -1,5 +1,5 @@
 //
-//  EntityDisplayableControllerViewModel.swift
+//  EntityDisplayableControllerDataSource.swift
 //  FetchResults
 //
 //  Created by Игорь Майсюк on 4/28/19.
@@ -15,6 +15,11 @@ protocol FetchResultsDataSourceDelegate: class {
   func dataSourceDidChangeObject(at sourceIndexPath: IndexPath?,
                                  to newIndexPath: IndexPath?,
                                  with style: NSFetchedResultsChangeType)
+}
+
+protocol EntityDisplayableControllerDataSource {
+  associatedtype Model: EntityDisplayableCellViewModel
+  associatedtype Cell: EntityDisplayableCell
 }
 
 protocol FetchResultsDataSource: EntityDisplayableControllerDataSource {
@@ -50,9 +55,4 @@ extension FetchResultsDataSource {
   func deleteObject(at indexPath: IndexPath) {
     
   }
-}
-
-protocol EntityDisplayableControllerDataSource {
-  associatedtype Model: EntityDisplayableCellViewModel
-  associatedtype Cell: EntityDisplayableCell
 }

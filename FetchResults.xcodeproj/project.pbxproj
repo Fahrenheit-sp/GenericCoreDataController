@@ -19,7 +19,7 @@
 		40309D2822759BB00089D636 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40309D2622759BB00089D636 /* User+CoreDataClass.swift */; };
 		40309D2922759BB00089D636 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40309D2722759BB00089D636 /* User+CoreDataProperties.swift */; };
 		40309D2B22759BEF0089D636 /* EntityDisplayableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40309D2A22759BEF0089D636 /* EntityDisplayableCellViewModel.swift */; };
-		40309D2D2275A2160089D636 /* EntityDisplayableControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40309D2C2275A2160089D636 /* EntityDisplayableControllerViewModel.swift */; };
+		40309D2D2275A2160089D636 /* EntityDisplayableControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40309D2C2275A2160089D636 /* EntityDisplayableControllerDataSource.swift */; };
 		40309D2F2275A3E90089D636 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40309D2E2275A3E90089D636 /* Reusable.swift */; };
 		40309D342275B9580089D636 /* Device+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40309D322275B9580089D636 /* Device+CoreDataClass.swift */; };
 		40309D352275B9580089D636 /* Device+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40309D332275B9580089D636 /* Device+CoreDataProperties.swift */; };
@@ -44,7 +44,7 @@
 		40309D2622759BB00089D636 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		40309D2722759BB00089D636 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		40309D2A22759BEF0089D636 /* EntityDisplayableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityDisplayableCellViewModel.swift; sourceTree = "<group>"; };
-		40309D2C2275A2160089D636 /* EntityDisplayableControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityDisplayableControllerViewModel.swift; sourceTree = "<group>"; };
+		40309D2C2275A2160089D636 /* EntityDisplayableControllerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityDisplayableControllerDataSource.swift; sourceTree = "<group>"; };
 		40309D2E2275A3E90089D636 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		40309D322275B9580089D636 /* Device+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataClass.swift"; sourceTree = "<group>"; };
 		40309D332275B9580089D636 /* Device+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				40309D3C2275EA740089D636 /* UserDisplay */,
 				40309D2122759AFD0089D636 /* Cells */,
 				40309D1D22759AA20089D636 /* EntityDisplayableTableViewController.swift */,
-				40309D2C2275A2160089D636 /* EntityDisplayableControllerViewModel.swift */,
+				40309D2C2275A2160089D636 /* EntityDisplayableControllerDataSource.swift */,
 			);
 			path = EntityDisplayable;
 			sourceTree = "<group>";
@@ -238,7 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40309D2D2275A2160089D636 /* EntityDisplayableControllerViewModel.swift in Sources */,
+				40309D2D2275A2160089D636 /* EntityDisplayableControllerDataSource.swift in Sources */,
 				40309D352275B9580089D636 /* Device+CoreDataProperties.swift in Sources */,
 				40309D392275DC570089D636 /* DeviceTableViewCell.swift in Sources */,
 				40309D2F2275A3E90089D636 /* Reusable.swift in Sources */,

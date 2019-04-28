@@ -62,7 +62,6 @@ final class EntityDisplayableTableViewController<DataSource: FetchResultsDataSou
     dataSource.deleteObject(at: indexPath)
   }
   
-  
 }
 
 extension EntityDisplayableTableViewController: FetchResultsDataSourceDelegate {
@@ -82,6 +81,5 @@ extension EntityDisplayableTableViewController: FetchResultsDataSourceDelegate {
     default: return
     }
   }
-  
   
 }
