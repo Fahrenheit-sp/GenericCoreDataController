@@ -10,13 +10,14 @@ import CoreData
 
 final class UserDisplayableControllerViewModel: NSObject, FetchResultsDataSource {
   var frc: NSFetchedResultsController<User>
+  let configuration: EntityControllerConfiguration
   private let context: NSManagedObjectContext
   
   typealias Model = UserDisplayableCellViewModel
   typealias Cell = UserTableViewCell
   weak var delegate: FetchResultsDataSourceDelegate?
   
-  init(with context: NSManagedObjectContext) {
+  init(with context: NSManagedObjectContext, configuration: EntityControllerConfiguration = EntityControllerDeletableConfiguration()) {
     let request: NSFetchRequest<Model.Entity> = Model.Entity.fetchRequest()
     request.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
     self.frc = NSFetchedResultsController(fetchRequest: request,
@@ -24,6 +25,7 @@ final class UserDisplayableControllerViewModel: NSObject, FetchResultsDataSource
                                           sectionNameKeyPath: nil,
                                           cacheName: nil)
     self.context = context
+    self.configuration = configuration
     super.init()
     frc.delegate = self
     try? frc.performFetch()

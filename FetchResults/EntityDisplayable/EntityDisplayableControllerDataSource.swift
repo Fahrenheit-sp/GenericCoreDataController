@@ -25,6 +25,7 @@ protocol EntityDisplayableControllerDataSource {
 protocol FetchResultsDataSource: EntityDisplayableControllerDataSource {
   var frc: NSFetchedResultsController<Model.Entity> {get}
   var delegate: FetchResultsDataSourceDelegate? {get set}
+  var configuration: EntityControllerConfiguration {get}
   
   func cellModel(at indexPath: IndexPath) -> Cell.Model
   func numberOfSections() -> Int

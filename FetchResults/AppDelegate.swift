@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let request: NSFetchRequest<User> = User.fetchRequest()
     persistentContainer.viewContext.performAndWait {
       guard let users = try? request.execute() else {return}
-      guard users.isEmpty else {return }
+      guard users.isEmpty else { return }
       let igor = User(context: persistentContainer.viewContext)
       igor.name = "Igor"
       igor.lastName = "Maisiuk"

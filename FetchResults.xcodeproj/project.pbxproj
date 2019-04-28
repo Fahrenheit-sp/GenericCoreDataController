@@ -27,6 +27,7 @@
 		40309D3B2275E1CF0089D636 /* DeviceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40309D3A2275E1CF0089D636 /* DeviceTableViewCell.xib */; };
 		40309D3E2275EA850089D636 /* UsersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40309D3D2275EA850089D636 /* UsersDataSource.swift */; };
 		40309D412275EAD30089D636 /* DevicesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40309D402275EAD30089D636 /* DevicesDataSource.swift */; };
+		40309D46227609E80089D636 /* EntityControllerCOnfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40309D45227609E80089D636 /* EntityControllerCOnfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		40309D3A2275E1CF0089D636 /* DeviceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceTableViewCell.xib; sourceTree = "<group>"; };
 		40309D3D2275EA850089D636 /* UsersDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDataSource.swift; sourceTree = "<group>"; };
 		40309D402275EAD30089D636 /* DevicesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesDataSource.swift; sourceTree = "<group>"; };
+		40309D45227609E80089D636 /* EntityControllerCOnfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityControllerCOnfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				40309D2122759AFD0089D636 /* Cells */,
 				40309D1D22759AA20089D636 /* EntityDisplayableTableViewController.swift */,
 				40309D2C2275A2160089D636 /* EntityDisplayableControllerDataSource.swift */,
+				40309D45227609E80089D636 /* EntityControllerCOnfiguration.swift */,
 			);
 			path = EntityDisplayable;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				40309D412275EAD30089D636 /* DevicesDataSource.swift in Sources */,
 				40309D1E22759AA20089D636 /* EntityDisplayableTableViewController.swift in Sources */,
 				40309D2822759BB00089D636 /* User+CoreDataClass.swift in Sources */,
+				40309D46227609E80089D636 /* EntityControllerCOnfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

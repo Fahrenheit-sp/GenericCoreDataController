@@ -50,11 +50,11 @@ final class EntityDisplayableTableViewController<DataSource: FetchResultsDataSou
   }
   
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-    return true
+    return dataSource.configuration.isEditingAllowed(at: indexPath)
   }
   
   override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-    return .delete
+    return dataSource.configuration.editingStyleForRow(at: indexPath)
   }
   
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

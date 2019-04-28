@@ -12,11 +12,12 @@ final class DeviceDisplayableControllerViewModel: NSObject, FetchResultsDataSour
   
   var frc: NSFetchedResultsController<Device>
   var delegate: FetchResultsDataSourceDelegate?
+  let configuration: EntityControllerConfiguration
   
   typealias Model = DeviceCellViewModel
   typealias Cell = DeviceTableViewCell
   
-  init(with context: NSManagedObjectContext, for user: User) {
+  init(with context: NSManagedObjectContext, for user: User, configuration: EntityControllerConfiguration = EntityControllerConfiguration()) {
     let request: NSFetchRequest<Model.Entity> = Model.Entity.fetchRequest()
     request.predicate = NSPredicate(format: "owner = %@", user)
     request.sortDescriptors = [NSSortDescriptor(key: "brand", ascending: true)]
@@ -24,6 +25,7 @@ final class DeviceDisplayableControllerViewModel: NSObject, FetchResultsDataSour
                                           managedObjectContext: context,
                                           sectionNameKeyPath: nil,
                                           cacheName: nil)
+    self.configuration = configuration
     super.init()
     
     try? frc.performFetch()
