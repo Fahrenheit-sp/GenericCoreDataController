@@ -42,7 +42,7 @@ extension FetchResultsDataSource {
   }
   
   func numberOfSections() -> Int {
-    return 1
+    return frc.sections?.count ?? 1
   }
   
   func numberOfRows(in section: Int) -> Int {
