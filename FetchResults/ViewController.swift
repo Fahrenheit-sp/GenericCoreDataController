@@ -9,12 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+  @IBOutlet weak var container: UIView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    let model = UserDisplayableControllerViewModel()
+    let controller = EntityDisplayableTableViewController(with: model)
+    addChild(controller)
+    container.addSubview(controller.view)
+    controller.didMove(toParent: self)
   }
-
 
 }
 
